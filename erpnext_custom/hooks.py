@@ -108,13 +108,16 @@ doc_events = {
 		"validate": "erpnext_custom.erpnext_custom.doc_events.Attendence_event.validate_attendence",
 	},
 	"Sales Invoice": {
-		"validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.validate_add_custome_remarks",
+		 "validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.validate_add_custome_remarks",
 	},
 	"Sales Invoice": {
-			"validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.check_pos_payment",
+		  "validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.check_pos_payment",
 		},
 	"Sales Invoice": {
-			"validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.validate_note_remarks",
+		  "validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.validate_note_remarks",
+		},
+	"Sales Invoice": {
+		  "validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.validate_note_remarks",
 		},
 }
 
