@@ -9,7 +9,9 @@ def validate_add_custome_remarks(doc,method):
 
 @frappe.whitelist()
 def validate_note_remarks(doc,method):
-    doc.remarks = str(doc.note)
+    notes = ""
+    notes = str(notes) + " \n " + str(doc.note)
+    doc.remarks = str(notes)
 
 @frappe.whitelist()
 def check_pos_payment(doc,method):

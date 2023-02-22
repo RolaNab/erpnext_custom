@@ -116,7 +116,6 @@ doc_events = {
 	"Sales Invoice": {
 			"validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.validate_note_remarks",
 		},
-
 }
 
 # Scheduled Tasks
