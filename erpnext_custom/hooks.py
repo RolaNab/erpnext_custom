@@ -31,10 +31,17 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+
+
+doctype_js = {"Purchase Order" : "public/js/purchase.js",
+			  "Quotation" : "public/js/quotation.js",
+			  "Sales Invoice" : "public/js/sales_invoice.js",
+			  }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
+
 
 # Home Pages
 # ----------
@@ -69,6 +76,7 @@ app_license = "MIT"
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
+
 # notification_config = "erpnext_custom.notifications.get_notification_config"
 
 # Permissions
@@ -87,6 +95,9 @@ app_license = "MIT"
 # ---------------
 # Override standard doctype classes
 
+override_doctype_class = {
+	"Purchase Order": "erpnext_custom.erpnext_custom.overrides.purchase_order.CustomPurchaseOrder"
+}
 # override_doctype_class = {
 #	"ToDo": "custom_app.overrides.CustomToDo"
 # }
@@ -108,17 +119,8 @@ doc_events = {
 		"validate": "erpnext_custom.erpnext_custom.doc_events.Attendence_event.validate_attendence",
 	},
 	"Sales Invoice": {
-		 "validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.validate_add_custome_remarks",
-	},
-	"Sales Invoice": {
-		  "validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.check_pos_payment",
-		},
-	"Sales Invoice": {
-		  "validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.validate_note_remarks",
-		},
-	"Sales Invoice": {
-		  "validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.validate_note_remarks",
-		},
+		 "validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.validate",
+	}
 }
 
 # Scheduled Tasks
