@@ -1,11 +1,13 @@
 import frappe
 
+
 def validate(doc, method):
     validate_add_custome_remarks(doc)
     validate_note_remarks(doc)
     check_pos_payment(doc)
     # allow_discount(customer_id)
-    check_discounts(doc)
+    # check_discounts(doc)
+
 
 @frappe.whitelist()
 def validate_add_custome_remarks(doc, method):
@@ -32,18 +34,16 @@ def check_pos_payment(doc, method):
             frappe.throw("Payment amount must be more than 0")
 
 
-
-
-# @frappe.whitelist(allow_guest=True)
-# def allow_discount(customer_id):
-#     allow_discount = frappe.get_value("Customer", customer_id, "allow_discount")
-#     if allow_discount == 0:
-#         return True
-#     return False
-
 @frappe.whitelist(allow_guest=True)
-def check_discounts(doc):
-    allow_discount = frappe.get_value("Customer", doc.customer, "allow_discount")
-    if allow_discount == 1:
+def allow_discount(customer_id):
+    allow_discount = frappe.get_value("Customer", customer_id, "allow_discount")
+    if allow_discount == 0:
         return True
     return False
+
+# @frappe.whitelist(allow_guest=True)
+# def check_discounts(doc):
+#     allow_discount = frappe.get_value("Customer", doc.customer, "allow_discount")
+#     if allow_discount == 1:
+#         return True
+#     return False

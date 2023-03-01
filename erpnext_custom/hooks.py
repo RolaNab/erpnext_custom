@@ -36,6 +36,8 @@ app_license = "MIT"
 doctype_js = {"Purchase Order" : "public/js/purchase.js",
 			  "Quotation" : "public/js/quotation.js",
 			  "Sales Invoice" : "public/js/sales_invoice.js",
+			  "Warehouse" : "public/js/warehouse.js",
+			  "Item" : "public/js/items.js",
 			  }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -120,7 +122,13 @@ doc_events = {
 	},
 	"Sales Invoice": {
 		 "validate": "erpnext_custom.erpnext_custom.doc_events.sales_invoice_event.validate",
-	}
+	},
+	"Purchase Invoice": {
+		 "on_submit": "erpnext_custom.erpnext_custom.doc_events.purchase_invoice_event.on_submit",
+	},
+	"Material Request": {
+		"on_submit": "erpnext_custom.erpnext_custom.doc_events.material_request.on_submit",
+		}
 }
 
 # Scheduled Tasks
@@ -198,4 +206,5 @@ user_data_fields = [
 # auth_hooks = [
 #	"erpnext_custom.auth.validate"
 # ]
+fixtures = ["Item"]
 

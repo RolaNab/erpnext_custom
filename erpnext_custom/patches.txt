@@ -1,0 +1,2 @@
+erpnext_custom.patches.add_department_to_warehouse
+erpnext_custom.patches.add_department_to_bom
