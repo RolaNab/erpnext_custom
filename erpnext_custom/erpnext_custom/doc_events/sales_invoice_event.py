@@ -34,12 +34,12 @@ def check_pos_payment(doc, method):
             frappe.throw("Payment amount must be more than 0")
 
 
-@frappe.whitelist(allow_guest=True)
-def allow_discount(customer_id):
-    allow_discount = frappe.get_value("Customer", customer_id, "allow_discount")
-    if allow_discount == 0:
-        return True
-    return False
+# @frappe.whitelist(allow_guest=True)
+# def allow_discount(customer_id):
+#     allow_disc = frappe.get_value("Customer", customer_id, "allow_discount")
+#     if allow_disc == 0:
+#         return True
+#     return False
 
 # @frappe.whitelist(allow_guest=True)
 # def check_discounts(doc):
